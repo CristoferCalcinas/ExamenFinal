@@ -20,14 +20,14 @@ namespace WebApplication3.Controllers
             [HttpGet]
         public IEnumerable<Hangar> GET()
         {
-            return _aplicacionContexto.hangar.ToList();
+            return _aplicacionContexto.hangares.ToList();
         }
 
         [Route("")]
         [HttpPost]
         public IActionResult POST([FromBody] Hangar newHangar)
         {
-            _aplicacionContexto.hangar.Add(newHangar);
+            _aplicacionContexto.hangares.Add(newHangar);
             _aplicacionContexto.SaveChanges();
             return Ok(newHangar);
         }
@@ -36,7 +36,7 @@ namespace WebApplication3.Controllers
         [HttpPut]
         public IActionResult PUT([FromBody] Hangar updateHangar)
         {
-            _aplicacionContexto.hangar.Update(updateHangar);
+            _aplicacionContexto.hangares.Update(updateHangar);
             _aplicacionContexto.SaveChanges();
             return Ok(updateHangar);
         }
@@ -45,7 +45,7 @@ namespace WebApplication3.Controllers
         [HttpDelete]
         public IActionResult DELETE(int idHangarDelete)
         {
-            _aplicacionContexto.hangar.Remove(_aplicacionContexto.hangar.ToList().Where(x => x.numero_hangar == idHangarDelete).FirstOrDefault());
+            _aplicacionContexto.hangares.Remove(_aplicacionContexto.hangares.ToList().Where(x => x.numero_hangar == idHangarDelete).FirstOrDefault());
             _aplicacionContexto.SaveChanges();
             return Ok(idHangarDelete);
         }

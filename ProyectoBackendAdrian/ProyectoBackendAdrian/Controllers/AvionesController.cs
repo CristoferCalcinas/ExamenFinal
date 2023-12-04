@@ -21,14 +21,14 @@ namespace WebApplication3.Controllers
         [Route("")]
         public IEnumerable<Aviones> GET()
         {
-            return _aplicacionContexto.avion.ToList();
+            return _aplicacionContexto.aviones.ToList();
         }
 
         [HttpPost]
         [Route("")]
         public IActionResult POST([FromBody] Aviones newAvion)
         {
-            _aplicacionContexto.avion.Add(newAvion);
+            _aplicacionContexto.aviones.Add(newAvion);
             _aplicacionContexto.SaveChanges();
             return Ok(newAvion);
         }
@@ -37,7 +37,7 @@ namespace WebApplication3.Controllers
         [Route("")]
         public IActionResult PUT([FromBody] Aviones avionUpdate)
         {
-            _aplicacionContexto.avion.Update(avionUpdate);
+            _aplicacionContexto.aviones.Update(avionUpdate);
             _aplicacionContexto.SaveChanges();
             return Ok(avionUpdate);
         }
@@ -46,7 +46,7 @@ namespace WebApplication3.Controllers
         [Route("")]
         public IActionResult DELETE(int idAvionDelete)
         {
-            _aplicacionContexto.avion.Remove(_aplicacionContexto.avion.ToList().Where(x=>x.numero == idAvionDelete).FirstOrDefault());
+            _aplicacionContexto.aviones.Remove(_aplicacionContexto.aviones.ToList().Where(x=>x.numero == idAvionDelete).FirstOrDefault());
             _aplicacionContexto.SaveChanges();
             return Ok(idAvionDelete);
         }
