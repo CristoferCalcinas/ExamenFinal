@@ -4,8 +4,7 @@
     {
         public int numero_licencia {  get; set; }
         public string? restricciones { get; set; }
-
-        public string? salario 
-        public string? turno
+        public string? salario {  get; set; }
+        public string? turno { get; set; }
     }
 }
