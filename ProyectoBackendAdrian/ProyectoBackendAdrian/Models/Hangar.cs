@@ -3,7 +3,7 @@
     public class Hangar
     {
         public int numero_hangar {  get; set; }
-        public string capacidad { get; set; }
-        public string localizacion { get; set; }
+        public string? capacidad { get; set; }
+        public string? localizacion { get; set; }
     }
 }
